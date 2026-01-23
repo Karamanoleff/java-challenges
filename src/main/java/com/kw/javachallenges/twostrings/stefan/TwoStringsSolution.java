@@ -2,6 +2,9 @@ package com.kw.javachallenges.twostrings.stefan;
 
 import com.kw.javachallenges.twostrings.TwoStringsSolver;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TwoStringsSolution implements TwoStringsSolver {
 
     public static void main(String[] args) {
@@ -21,6 +24,10 @@ public class TwoStringsSolution implements TwoStringsSolver {
 
     @Override
     public boolean hasCommonSubstring(String s1, String s2) {
-        return false;
+        List<String> result = new ArrayList<>();
+        for(int i=1; i==s1.length()-1; i++){
+            result.add(s1.substring(i));
+        }
+        return result.isEmpty();
     }
 }
