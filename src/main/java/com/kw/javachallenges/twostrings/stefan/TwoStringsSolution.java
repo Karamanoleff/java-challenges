@@ -17,7 +17,6 @@ public class TwoStringsSolution implements TwoStringsSolver {
         System.out.println("hasCommonSubstring(\"\", \"hello\"): " + solver.hasCommonSubstring("", "hello"));
 
         System.out.println("=============================================");
-        System.out.println("=============================================");
     }
 
     @Override
