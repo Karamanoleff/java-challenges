@@ -17,18 +17,8 @@ public class PeterSchwuerzenbeckTwoStringsSolver implements TwoStringsSolver {
 
         List<String> inputStrings = List.of(s1, s2);
         for (String s : inputStrings) {
-            if (s.length() > 100000) {
-                throw new IllegalArgumentException("Input string has more that 100000 characters");
-                // check min length
-            } else if (s.isEmpty()) {
+            if (s.isEmpty()) {
                 return false;
-            }
-
-            // check only lowercase characters
-            for (char c : s.toCharArray()) {
-                if (!Character.isLowerCase(c)) {
-                    throw new IllegalArgumentException("Input strings must contain only lowercase characters");
-                }
             }
         }
 
