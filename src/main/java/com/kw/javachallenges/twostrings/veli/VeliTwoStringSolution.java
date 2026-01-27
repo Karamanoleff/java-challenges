@@ -22,11 +22,4 @@ public class VeliTwoStringSolution implements TwoStringsSolver {
 
         return false;
     }
-
-    public static void main(String[] args) {
-        VeliTwoStringSolution veli = new VeliTwoStringSolution();
-        System.out.println(veli.hasCommonSubstring("veli", "gosho"));
-        System.out.println(veli.hasCommonSubstring("veli", "nemi"));
-        System.out.println(veli.hasCommonSubstring("veli", "mart"));
-    }
 }
