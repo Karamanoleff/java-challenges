@@ -14,7 +14,7 @@ public class TestIvan {
         }
 
         int pairs = sc.nextInt();
-        sc.nextLine(); // Изчистване на буфера
+        sc.nextLine(); // Clear buffer
 
         for (int i = 1; i <= pairs; i++) {
             System.out.println("\n--- Testing Pair #" + i + " ---");
@@ -25,10 +25,9 @@ public class TestIvan {
             System.out.print("String 2: ");
             String s2 = sc.nextLine();
 
-            // Логиката за сравнение
+            // Comparison logic
             boolean hasMatch = s1.chars().anyMatch(c -> s2.indexOf(c) != -1);
 
-            // Красив изход
             System.out.print("RESULT: ");
             if (hasMatch) {
                 System.out.println("✅ YES (Found common letters)");
