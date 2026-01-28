@@ -42,12 +42,15 @@ public class TwoStringsSolutionWhatIWouldDo implements TwoStringsSolver {
             s2 = temp;
         }
 
+        // using Set instead of List because Set is more efficient than list (Set doesn't care about char position, while List cares)
         Set<Character> charsSeenInShorterString = new HashSet<>(s1.length());
 
+        //building the set
         for (int i = 0; i < s1.length(); i++) {
             charsSeenInShorterString.add(s1.charAt(i));
         }
 
+        //parsing on s2 to see whether s1 Set contains current s1 char
         for (int i = 0; i < s2.length(); i++) {
             if (charsSeenInShorterString.contains(s2.charAt(i))) {
                 return true;
