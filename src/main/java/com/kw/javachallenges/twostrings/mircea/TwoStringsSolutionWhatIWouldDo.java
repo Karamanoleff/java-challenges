@@ -7,6 +7,23 @@ import java.util.Set;
 
 public class TwoStringsSolutionWhatIWouldDo implements TwoStringsSolver {
 
+
+    public static void main(String[] args) {
+
+        TwoStringsSolutionWhatIWouldDo solver = new TwoStringsSolutionWhatIWouldDo();
+
+        System.out.println("=============================================");
+        System.out.println("Testing Two Strings Implementation");
+        System.out.println("=============================================");
+
+        System.out.println("hasCommonSubstring(\"hello\", \"world\"): " + solver.hasCommonSubstring("hello", "world"));
+        System.out.println("hasCommonSubstring(\"hi\", \"world\"): " + solver.hasCommonSubstring("hi", "world"));
+        System.out.println("hasCommonSubstring(\"abc\", \"def\"): " + solver.hasCommonSubstring("abc", "def"));
+        System.out.println("hasCommonSubstring(\"\", \"hello\"): " + solver.hasCommonSubstring("", "hello"));
+
+        System.out.println("=============================================");
+    }
+
     @Override
     public boolean hasCommonSubstring(String s1, String s2) {
         if (s1 == null || s2 == null) {
@@ -18,7 +35,7 @@ public class TwoStringsSolutionWhatIWouldDo implements TwoStringsSolver {
         }
 
         // do a swap in order to go through the shorter string (more efficient)
-        // on a 100k string, it improves performance by 10-20%
+        // on a 100k string, it improves performance by 10-20% compared to the easy-to-read one
         if (s1.length() > s2.length()) {
             String temp = s1;
             s1 = s2;
