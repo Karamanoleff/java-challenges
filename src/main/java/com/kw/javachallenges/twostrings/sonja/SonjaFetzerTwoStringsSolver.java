@@ -40,8 +40,8 @@ public class SonjaFetzerTwoStringsSolver implements TwoStringsSolver {
             longer = s1;
         }
 
-       for(int a = 0; a < shorter.length()-1; a++){
-           for(int b = 0; b <longer.length()-1; b++){
+       for(int a = 0; a < shorter.length(); a++){
+           for(int b = 0; b <longer.length(); b++){
                if(shorter.charAt(a) == longer.charAt(b)){
                    return true;
                }
