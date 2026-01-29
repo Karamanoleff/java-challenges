@@ -1,4 +1,4 @@
-package com.kw.javachallenges.twostrings;
+package com.kw.javachallenges.twostrings.ivanTest;
 
 import java.util.Scanner;
 
