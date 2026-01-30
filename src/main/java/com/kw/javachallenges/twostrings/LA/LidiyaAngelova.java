@@ -24,13 +24,13 @@ public class LidiyaAngelova implements TwoStringsSolver {
 
         // 4. Mark characters from s1
         for (char c : s1.toCharArray()) {
-            seen.add(c);  // mark the character as seen
+            seen.add(c);
         }
 
         // 5. Check characters from s2
         for (char c : s2.toCharArray()) {
             if (seen.contains(c)) {
-                return true; // common character found
+                return true;
             }
         }
 
