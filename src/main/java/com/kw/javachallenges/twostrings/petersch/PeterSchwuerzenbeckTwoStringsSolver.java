@@ -1,8 +1,5 @@
 package com.kw.javachallenges.twostrings.petersch;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.kw.javachallenges.twostrings.TwoStringsSolver;
 
 
@@ -15,41 +12,19 @@ public class PeterSchwuerzenbeckTwoStringsSolver implements TwoStringsSolver {
             throw new IllegalArgumentException("Input strings cannot be null");
         }
 
-        List<String> inputStrings = List.of(s1, s2);
-        for (String s : inputStrings) {
-            if (s.isEmpty()) {
-                return false;
-            }
+        if (s1.isEmpty() || s2.isEmpty()) {
+            return false;
         }
 
         // check which string is shorter
-        String shorterString;
-        String longerString;
+        String shorterString = s1.length() <= s2.length() ? s1 : s2;
+        String longerString = s1.length() <= s2.length() ? s2 : s1;
 
-        if (s1.length() <= s2.length()) {
-            shorterString = s1;
-            longerString = s2;
-        } else {
-            shorterString = s2;
-            longerString = s1;
-        }
-
-        // compare characters of shorter string are contained in longer string
-        List<Character> charsOfShortAlreadyCompared = new ArrayList<>();
+        // compare characters of shorter string with longer string
         for (char cShort : shorterString.toCharArray()) {
-            // check only character of short string is no duplicate
-            if (!charsOfShortAlreadyCompared.contains(cShort)) {
-                charsOfShortAlreadyCompared.add(cShort);
-                List<Character> charsOfLongAlreadyCompared = new ArrayList<>();
-                for (char cLong : longerString.toCharArray()) {
-                    // check only character of long string is no duplicate
-                    if (!charsOfLongAlreadyCompared.contains(cLong)) {
-                        charsOfLongAlreadyCompared.add(cLong);
-                        if (cShort == cLong) {
-                            return true;
-                        }
-                    }
-
+            for (char cLong : longerString.toCharArray()) {
+                if (cShort == cLong) {
+                    return true;
                 }
             }
 
