@@ -22,7 +22,7 @@ public class LidiyaAngelova implements TwoStringsSolver {
         // 3. Create a Set to track characters in s1
         Set<Character> seen = new HashSet<>();
 
-        // 4. Mark characters from s1
+        // 4. Record characters from s1
         for (char c : s1.toCharArray()) {
             seen.add(c);
         }
