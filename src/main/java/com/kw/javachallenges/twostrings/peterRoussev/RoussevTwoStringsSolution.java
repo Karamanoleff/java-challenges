@@ -48,14 +48,10 @@ public class RoussevTwoStringsSolution implements TwoStringsSolver {
         } else if (s1.isEmpty() || s2.isEmpty()) {
             System.out.println("Cannot compare empty string/s.");
             return false;
-        }
-
-        if(s1.equals(s2)) {
+        } else if (s1.equals(s2)) {
             System.out.println("The words are equal.");
             return true;
-        }
-
-        if (s1.length() <20 || s2.length() <20) {
+        } else if (s1.length() <20 || s2.length() <20) {
             System.out.println("Strings have a reasonable length to be compared more thoroughly, result for all substrings:");
             List<String> resultS1 = collectAllSubstrings(s1);
             List<String> resultS2 = collectAllSubstrings(s2);
