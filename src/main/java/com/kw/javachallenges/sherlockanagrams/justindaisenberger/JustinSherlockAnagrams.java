@@ -19,7 +19,6 @@ public class JustinSherlockAnagrams implements AnagramPairsCounter {
         int pairCount = 0;
 
         List<String> allSubstrings = getSubstrings(s);
-        // System.out.println(allSubstrings);
 
         for (int i = 0; i < allSubstrings.size(); i++) {
             for (int j = i + 1; j < allSubstrings.size(); j++) {
