@@ -1,7 +1,5 @@
 package com.kw.javachallenges.twostrings.ivanTest;
 
-import com.kw.javachallenges.twostrings.ivanTest.IvanTwoStringsSolver;
-
 public class ManualTest {
     public static void main(String[] args) {
         IvanTwoStringsSolver solver = new IvanTwoStringsSolver();
