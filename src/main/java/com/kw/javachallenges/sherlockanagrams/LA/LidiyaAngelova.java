@@ -1,4 +1,5 @@
 package com.kw.javachallenges.sherlockanagrams.LA;
+
 import com.kw.javachallenges.sherlockanagrams.AnagramPairsCounter;
 
 import java.util.HashMap;
