@@ -7,7 +7,7 @@ import java.sql.SQLOutput;
 public class Test {
     public static void main(String[] args) {
         AnagramPairsCounter counter = new LidiyaAngelova();
-        int result = counter.countAnagrammaticPairs("");
+        int result = counter.countAnagrammaticPairs("abba");
         System.out.println("Total pairs = " + result);
     }
 }
