@@ -7,28 +7,23 @@ import java.util.stream.Collectors;
 public class PerformanceBattle {
 
     public static void main(String[] args) {
-        // Increase the size to better perceive the performance differences
-        int size = 1_000_000;
+        // Set to 100,000 to avoid "always false" warning and allow indexOf to run
+        int size = 100_000;
 
-        // Generate two strings with no matches (worst-case scenario for performance)
+        // Generate strings using the efficient repeat() method
         String s1 = "a".repeat(size);
         String s2 = "b".repeat(size);
 
         System.out.println("=== PERFORMANCE BATTLE (" + size + " characters) ===");
 
-        // Warm-up: Run a method multiple times to "warm up" the JVM
+        // Warm-up to let JIT compiler optimize the code
         for (int i = 0; i < 100; i++) {
             fastArrayApproach(s1, s2);
         }
 
         // --- 1. Initial approach (O(n * m)) ---
-        // WARNING: For 1,000,000 characters, indexOf will take an ETERNITY.
-        // Therefore, we limit it here only if you choose to wait.
-        if (size <= 100000) {
-            runTest("1. Initial (indexOf)", () -> s1.chars().anyMatch(c -> s2.indexOf(c) != -1));
-        } else {
-            System.out.println("1. Initial (indexOf): Skipped (too slow for " + size + ")");
-        }
+        // This will now execute because size <= 100,000
+        runTest("1. Initial (indexOf)", () -> s1.chars().anyMatch(c -> s2.indexOf(c) != -1));
 
         // --- 2. Stream + Set (O(n + m)) ---
         runTest("2. Stream + Set", () -> {
@@ -50,7 +45,6 @@ public class PerformanceBattle {
         long start = System.nanoTime();
         boolean result = method.get();
         long end = System.nanoTime();
-        // Convert to milliseconds for easier readability
         double duration = (end - start) / 1_000_000.0;
         System.out.printf("%-20s | Time: %10.4f ms | Result: %s%n", name, duration, result);
     }
