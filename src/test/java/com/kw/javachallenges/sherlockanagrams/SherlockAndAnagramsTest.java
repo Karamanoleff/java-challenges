@@ -1,5 +1,6 @@
 package com.kw.javachallenges.sherlockanagrams;
 
+import com.kw.javachallenges.sherlockanagrams.lyubomirmarchev.LyubomirAnagrams;
 import com.kw.javachallenges.sherlockanagrams.stefan.SherlockAndAnagramsSolution;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -17,7 +18,7 @@ import org.testng.annotations.Test;
  */
 public class SherlockAndAnagramsTest {
 
-    private static final AnagramPairsCounter SOLVER = new SherlockAndAnagramsSolution();//replace with your own
+    private static final AnagramPairsCounter SOLVER = new LyubomirAnagrams();//replace with your own
 
     /**
      * Test the classic "abba" example with 4 anagrammatic pairs
