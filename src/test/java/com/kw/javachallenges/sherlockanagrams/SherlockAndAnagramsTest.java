@@ -1,7 +1,6 @@
 package com.kw.javachallenges.sherlockanagrams;
 
 import com.kw.javachallenges.sherlockanagrams.lyubomirmarchev.LyubomirAnagrams;
-import com.kw.javachallenges.sherlockanagrams.stefan.SherlockAndAnagramsSolution;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
