@@ -40,7 +40,6 @@ public class IvanTwoStringsSolver implements TwoStringsSolver {
                 throw new IllegalArgumentException("Invalid character '" + c + "'. Only lowercase a-z allowed.");
             }
             if (alphabet[c - 'a']) {
-                System.out.println("YES (common: " + c + ")");
                 return true;
             }
         }
