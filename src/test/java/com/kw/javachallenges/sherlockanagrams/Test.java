@@ -1,6 +1,6 @@
-package com.kw.javachallenges.sherlockanagrams.LA;
+package com.kw.javachallenges.sherlockanagrams;
 
-import com.kw.javachallenges.sherlockanagrams.AnagramPairsCounter;
+import com.kw.javachallenges.sherlockanagrams.LA.LidiyaAngelova;
 
 public class Test {
     public static void main(String[] args) {
