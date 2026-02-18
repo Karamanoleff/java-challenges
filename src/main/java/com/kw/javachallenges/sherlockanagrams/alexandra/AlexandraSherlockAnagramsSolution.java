@@ -11,8 +11,8 @@ public class AlexandraSherlockAnagramsSolution implements AnagramPairsCounter {
     @Override
     public int countAnagrammaticPairs(String s) {
 
-        if(s==null) throw new IllegalArgumentException();
-        if(s.length()<2) return 0;
+        if(s == null) throw new IllegalArgumentException();
+        if(s.length() < 2) return 0;
 
         List <String> extractedSubstrings = new ArrayList<>();
         for(int start = 0; start < s.length(); start++) {
@@ -34,7 +34,7 @@ public class AlexandraSherlockAnagramsSolution implements AnagramPairsCounter {
         return pairsCounter;
     }
 
-    public boolean stringsAreAnagrams(String s1, String s2) {
+    private boolean stringsAreAnagrams(String s1, String s2) {
         if(s1.length() != s2.length()) return false;
 
         char[] arr1 = s1.toCharArray();
