@@ -15,13 +15,13 @@ public class AnagramPairsCounterMo implements AnagramPairsCounter {
         if (s == null) {
             throw new IllegalArgumentException("Strings cannot be null");
         }
-        if (s.isEmpty() || s.length() > 100) {
-            throw new IllegalArgumentException("Strings should be between 1 and 100 characters");
+
+        {
+            if (s.isEmpty())
+                return 0;
         }
         s = s.toLowerCase();
 
-        if (s.isEmpty())
-            return 0;
 
         for (int i = 0; i < s.length(); i++) {              //Creating nested for cycle for all substrings.
             for (int j = i + 1; j <= s.length(); j++) {
@@ -45,10 +45,10 @@ public class AnagramPairsCounterMo implements AnagramPairsCounter {
 
     public static void main(String[] args) {
         AnagramPairsCounterMo calculator = new AnagramPairsCounterMo();
-        String anagramPairs = "";
+        String anagramPairs = "test";
         System.out.println("Anagrams in ' " + anagramPairs + "': " + calculator.countAnagrammaticPairs(anagramPairs));
-        String anagramPairs1 = null;
-        System.out.println("Anagrams in ' " + anagramPairs1 + "': " + calculator.countAnagrammaticPairs(anagramPairs1));
+        ///String anagramPairs1 = null;
+        //System.out.println("Anagrams in ' " + anagramPairs1 + "': " + calculator.countAnagrammaticPairs(anagramPairs1));
         String anagramPairs2 = "test";
         System.out.println("Anagrams in ' " + anagramPairs2 + "': " + calculator.countAnagrammaticPairs(anagramPairs2));
         String anagramPairs3 = "user";
