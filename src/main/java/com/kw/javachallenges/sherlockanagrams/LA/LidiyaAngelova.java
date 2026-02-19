@@ -47,4 +47,10 @@ public class LidiyaAngelova implements AnagramPairsCounter {
 
         return totalPairs;
     }
+
+    public static void main(String[] args) {
+        AnagramPairsCounter counter = new LidiyaAngelova();
+        int result = counter.countAnagrammaticPairs("xoxo");
+        System.out.println("Total pairs = " + result);
+    }
 }
