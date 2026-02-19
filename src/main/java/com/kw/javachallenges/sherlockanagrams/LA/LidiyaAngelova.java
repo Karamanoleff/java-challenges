@@ -2,8 +2,9 @@ package com.kw.javachallenges.sherlockanagrams.LA;
 
 import com.kw.javachallenges.sherlockanagrams.AnagramPairsCounter;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class LidiyaAngelova implements AnagramPairsCounter {
 
@@ -15,29 +16,35 @@ public class LidiyaAngelova implements AnagramPairsCounter {
         if (s.length() < 2)
             return 0;
 
-        Map<String, Integer> anagramCounts = new HashMap<>();
+        //Store  sorted substrings
+        List<String> sortedSubstrings = new ArrayList<>();
 
         for (int i = 0; i < s.length(); i++) {
             for (int j = i + 1; j <= s.length(); j++) {
+
                 String substring = s.substring(i, j);
 
                 char[] chars = substring.toCharArray();
-                java.util.Arrays.sort(chars);
+                Arrays.sort(chars);
+
                 String sortedSubstring = new String(chars);
 
-                anagramCounts.put(
-                        sortedSubstring,
-                        anagramCounts.getOrDefault(sortedSubstring, 0) + 1
-                );
+                sortedSubstrings.add(sortedSubstring);
             }
         }
+
+        // Compare substrings
         int totalPairs = 0;
 
-        for (int count : anagramCounts.values()) {
-            if (count > 1) {
-                totalPairs += count * (count - 1) / 2;
+        for (int i = 0; i < sortedSubstrings.size(); i++) {
+            for (int j = i + 1; j < sortedSubstrings.size(); j++) {
+
+                if (sortedSubstrings.get(i).equals(sortedSubstrings.get(j))) {
+                    totalPairs++;
+                }
             }
         }
+
         return totalPairs;
     }
 }
