@@ -13,6 +13,6 @@ public class SmsNotificationSender implements NotificationSender {
 
     @Override
     public String send(Notification notification) {
-        return "Your SMS to: " + notification.getRecipient().getAddress() + ": " + notification.getMessage().getContent() + "has been successfully sent!";
+        return "Your SMS to " + notification.getRecipient().getAddress() + ":" + " " + "'" + notification.getMessage().getContent() + "'" + " has been successfully sent via SMS!";
     }
 }

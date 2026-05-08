@@ -1,11 +1,8 @@
 package com.kw.javachallenges.notification.participants.example.lidiya;
 
-import com.kw.javachallenges.notification.model.BasicNotification;
-import com.kw.javachallenges.notification.model.TextMessage;
-import com.kw.javachallenges.notification.model.UserRecipient;
+import com.kw.javachallenges.notification.model.*;
 import com.kw.javachallenges.notification.service.NotificationService;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class NotificationDemo {
@@ -18,7 +15,16 @@ public class NotificationDemo {
         EmailNotificationSender userViaEmail = new EmailNotificationSender();
         SmsNotificationSender userViaSms = new SmsNotificationSender();
 
-        NotificationService service = new NotificationService(Arrays.asList(userViaEmail, userViaSms));}
+        NotificationService service = new NotificationService(Arrays.asList(userViaEmail, userViaSms));
 
+        try {
+            String emailTest = service.sendNotification(basicNotification, Channel.EMAIL);
+            System.out.println("Result -> " + emailTest);
+            String smsTest = service.sendNotification(basicNotification, Channel.SMS);
+            System.out.println("Result -> " + smsTest);
 
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
 }

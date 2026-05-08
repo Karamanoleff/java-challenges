@@ -13,6 +13,6 @@ public class EmailNotificationSender implements NotificationSender {
 
     @Override
     public String send(Notification notification) {
-        return "Your email to: " + notification.getRecipient().getAddress() + ": " + notification.getMessage().getContent() + "has been successfully sent";
+        return "Your email to " + notification.getRecipient().getAddress() + ":" + " " + "'" + notification.getMessage().getContent() + "'" + " has been successfully sent via Email!";
     }
 }
