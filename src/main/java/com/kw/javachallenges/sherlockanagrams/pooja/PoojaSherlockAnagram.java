@@ -10,8 +10,11 @@ public class PoojaSherlockAnagram implements AnagramPairsCounter {
 
     @Override
     public int countAnagrammaticPairs(String s) {
-        if (s == null || s.isEmpty()) {
+        if (s == null) {
             throw new IllegalArgumentException("Input string cannot be null");
+        }
+        if (s.isEmpty()) {
+            return 0;
         }
 
         List<String> str1 = new ArrayList<>();
