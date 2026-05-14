@@ -4,7 +4,7 @@ import com.kw.javachallenges.notification.model.*;
 import com.kw.javachallenges.notification.sender.NotificationSender;
 import com.kw.javachallenges.notification.service.NotificationService;
 
-import java.util.Arrays;
+import java.util.List;
 
 public class NotificationDemo {
     public static void main(String[] args) {
@@ -12,7 +12,7 @@ public class NotificationDemo {
         NotificationSender emailSender = new EmailNotificationSender();
         NotificationSender smsSender = new SmsNotificationSender();
 
-        NotificationService service = new NotificationService(Arrays.asList(emailSender, smsSender));
+        NotificationService service = new NotificationService(List.of(emailSender));
 
         Notification notification = new BasicNotification(
         new UserRecipient("onlyone@test.com"),
